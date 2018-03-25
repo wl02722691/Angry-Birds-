@@ -41,7 +41,7 @@ class GameScene: SKScene {
         if let mapNode = childNode(withName: "Tile Map Node") as? SKTileMapNode{
             self.mapNode = mapNode
              maxScale = mapNode.mapSize.height/frame.size.height
-            
+             maxScale = mapNode.mapSize.width/frame.size.width
     
         }
         addCamera()
