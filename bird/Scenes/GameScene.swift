@@ -25,6 +25,33 @@ class GameScene: SKScene {
         setupGestureRecognizers()
         }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first{
+            let location = touch.location(in: self)
+            if bird.contains(location){
+                panRecognizer.isEnabled = false
+                bird.grabbed = true
+                bird.position = location
+            }
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first{
+            if bird.grabbed{
+                let location = touch.location(in: self)
+                bird.position = location
+            }
+        
+        }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if bird.grabbed{
+            bird.grabbed = false
+            
+        }
+    }
+    
     func setupGestureRecognizers() {
         guard let view = view else { return }
         panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pan))
