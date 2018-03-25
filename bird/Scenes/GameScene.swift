@@ -14,9 +14,9 @@ class GameScene: SKScene {
     var mapNode = SKTileMapNode()
     
     let gameCamera = GameCamera()//建立遊戲鏡頭
-    var panRecognizer = UIPanGestureRecognizer()
-    var pinchRecognizer = UIPinchGestureRecognizer()
-    var maxScale:CGFloat = 0
+    var panRecognizer = UIPanGestureRecognizer()//讓鏡頭用手指能移動
+    var pinchRecognizer = UIPinchGestureRecognizer()//雙指縮放
+    var maxScale:CGFloat = 0//雙指縮放最大scale
     
     
     override func didMove(to view: SKView) {
@@ -30,6 +30,9 @@ class GameScene: SKScene {
         //在觸動UIPanGestureRecognizer時會利用到@objc func pan(sender:UIPanGestureRecognizer)
         view.addGestureRecognizer(panRecognizer)
         
+        
+        //UIPinchGestureRecognizer時會利用到@objc @objc func pinch
+        //讓他能兩指縮放功能
         pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinch))
         view.addGestureRecognizer(pinchRecognizer)
     }
@@ -64,21 +67,25 @@ extension GameScene{
         //手勢移動時，frame的移動計算方式，+-的方式是跟拖曳的方向有關
         sender.setTranslation(CGPoint.zero, in: view)
     }
+    
 
+    //雙點縮放
     @objc func pinch(sender:UIPinchGestureRecognizer){
-        let locationInView = sender.location(in: view)
-        let location = convertPoint(fromView: locationInView)
-        
         guard let view = view else {return}
-        if sender.numberOfTouches == 2 {
+        if sender.numberOfTouches == 2 { //有兩指點選螢幕的狀態下
+
+            let locationInView = sender.location(in: view)
+            let location = convertPoint(fromView: locationInView)
+
             if sender.state == .changed{
+
                 let convertedScale = 1/sender.scale
                 let newScale = gameCamera.yScale*convertedScale
                 if newScale < maxScale && newScale > 0.5{
                     gameCamera.setScale(newScale)
                 }
                 gameCamera.setScale(newScale)
-                
+
                 let locationAfterScale = convertPoint(fromView: locationInView)
                 let locationDelta = CGPoint(x: location.x - locationAfterScale.x , y: location.y-locationAfterScale.y)
                 let newPosition = CGPoint(x: gameCamera.position.x + locationDelta.x, y: gameCamera.position.x + locationDelta.y)
@@ -89,6 +96,5 @@ extension GameScene{
         }
     }
 }
-
 
 
