@@ -17,7 +17,8 @@ class GameScene: SKScene {
     var panRecognizer = UIPanGestureRecognizer()//讓鏡頭用手指能移動
     var pinchRecognizer = UIPinchGestureRecognizer()//雙指縮放
     var maxScale:CGFloat = 0//雙指縮放最大scale
-    
+    var bird = Bird(type: .red)
+    let anchor = SKNode()
     
     override func didMove(to view: SKView) {
         setupLevel()
@@ -40,11 +41,14 @@ class GameScene: SKScene {
     func setupLevel(){
         if let mapNode = childNode(withName: "Tile Map Node") as? SKTileMapNode{
             self.mapNode = mapNode
-             maxScale = mapNode.mapSize.height/frame.size.height
-             maxScale = mapNode.mapSize.width/frame.size.width
+             maxScale = mapNode.mapSize.height/frame.size.height//雙指縮放最大height
+             maxScale = mapNode.mapSize.width/frame.size.width//雙指縮放最大width
     
         }
         addCamera()
+        anchor.position = CGPoint(x: mapNode.frame.midX/2, y: mapNode.frame.midY/2)
+        addChild(anchor)
+        addBird()
     }
     
     func addCamera(){
@@ -54,6 +58,11 @@ class GameScene: SKScene {
         camera = gameCamera //resizeFill讀取camera = gameCamera
         gameCamera.setConstraints(with: self, and: mapNode.frame, to: gameCamera)
         }
+    
+    func addBird(){
+        bird.position = anchor.position
+        addChild(bird)
+        }
     }
 
 
@@ -61,7 +70,7 @@ extension GameScene{
 
     @objc func pan(sender:UIPanGestureRecognizer) {
         guard let view = view else { return }
-        let translation = sender.translation(in: view) * gameCamera.yScale//sender回傳手勢移動距離，存在translation
+        let translation = sender.translation(in: view) * gameCamera.yScale //sender回傳手勢移動距離，存在translation
         gameCamera.position = CGPoint(x: gameCamera.position.x - translation.x,
                                       y: gameCamera.position.y + translation.y)
         //手勢移動時，frame的移動計算方式，+-的方式是跟拖曳的方向有關
@@ -87,14 +96,18 @@ extension GameScene{
                
 
                 let locationAfterScale = convertPoint(fromView: locationInView)
-                let locationDelta = CGPoint(x: location.x - locationAfterScale.x , y: location.y-locationAfterScale.y)
-                let newPosition = CGPoint(x: gameCamera.position.x + locationDelta.x, y: gameCamera.position.x + locationDelta.y)
+                let locationDelta = location - locationAfterScale
+                //原本是這樣let locationDelta = CGPoint(x: location.x - locationAfterScale.x , y: location.y-locationAfterScale.y)但有Configuration的extension所以可以轉換為比較看得懂的方式
+                let newPosition = gameCamera.position + locationDelta
+                ////原本是這樣let newPosition = CGPoint(x: gameCamera.position.x + locationDelta.x, y: gameCamera.position.x + locationDelta.y)
                 gameCamera.position = newPosition
                 sender.scale = 1.0
                 gameCamera.setConstraints(with: self, and: mapNode.frame, to: gameCamera)
+                
             }
         }
     }
 }
+
 
 
