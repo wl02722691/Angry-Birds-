@@ -48,7 +48,15 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if bird.grabbed{
             bird.grabbed = false
+            bird.flying = true
+            constraintToAnchor(active: false)
             
+            
+            let dx = anchor.position.x - bird.position.x
+            let dy = anchor.position.y - bird.position.y
+            let impulse = CGVector(dx: dx, dy: dy)
+            bird.physicsBody?.applyImpulse(impulse)
+            bird.isUserInteractionEnabled = false
         }
     }
     
@@ -86,9 +94,27 @@ class GameScene: SKScene {
         gameCamera.setConstraints(with: self, and: mapNode.frame, to: gameCamera)
         }
     
+    
     func addBird(){
+        bird.physicsBody = SKPhysicsBody(rectangleOf: bird.size)//物理範圍：鳥
+        bird.physicsBody?.categoryBitMask = PhysicsCategory.bird
+        bird.physicsBody?.collisionBitMask = PhysicsCategory.block | PhysicsCategory.edge
+        
+        bird.physicsBody?.isDynamic = false
+        
         bird.position = anchor.position
         addChild(bird)
+        constraintToAnchor(active: true)
+        }
+    
+    func constraintToAnchor(active:Bool){
+        if active{
+            let singleRange = SKRange(lowerLimit: 0.0, upperLimit: bird.size.width*3)
+            let positionConstrain = SKConstraint.distance(singleRange, to: anchor)
+            bird.constraints = [positionConstrain]
+        }else{
+            bird.constraints?.removeAll()
+            }
         }
     }
 
