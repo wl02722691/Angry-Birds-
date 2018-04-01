@@ -17,7 +17,7 @@ class Bird: SKSpriteNode {
     let birdType:BirdType
     var grabbed = false
     var flying = false{
-        didSet{
+        didSet{//在屬性發生變化後，更新一下flying的屬性
             if flying{
                 physicsBody?.isDynamic = true
             }

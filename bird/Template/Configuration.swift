@@ -9,7 +9,11 @@
 import Foundation
 import CoreGraphics
 
-//讓+ - * 的CGPoint可以轉
+
+
+
+
+
 struct PhysicsCategory{
     
     static let none:UInt32 = 0
@@ -20,7 +24,7 @@ struct PhysicsCategory{
     
 }
 
-extension CGPoint{
+extension CGPoint{//讓+ - * 的CGPoint可以轉
     static public func + (left: CGPoint,right:CGPoint) -> CGPoint{
         return CGPoint(x: left.x + right.x , y: left.y + right.y)
     }

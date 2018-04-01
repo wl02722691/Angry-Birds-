@@ -46,12 +46,14 @@ class GameScene: SKScene {
         }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //放開手時
         if bird.grabbed{
+            gameCamera.setConstraints(with: self, and: mapNode.frame, to: bird)
             bird.grabbed = false
-            bird.flying = true
+            bird.flying = true// physicsBody?.isDynamic = true
             constraintToAnchor(active: false)
             
-            
+            //用applyImpulse加上重力在物件上
             let dx = anchor.position.x - bird.position.x
             let dy = anchor.position.y - bird.position.y
             let impulse = CGVector(dx: dx, dy: dy)
@@ -81,6 +83,12 @@ class GameScene: SKScene {
     
         }
         addCamera()
+        
+        physicsBody = SKPhysicsBody(edgeLoopFrom: mapNode.frame)
+        physicsBody?.categoryBitMask = PhysicsCategory.edge
+        physicsBody?.contactTestBitMask = PhysicsCategory.bird | PhysicsCategory.block
+        physicsBody?.collisionBitMask = PhysicsCategory.all
+        
         anchor.position = CGPoint(x: mapNode.frame.midX/2, y: mapNode.frame.midY/2)
         addChild(anchor)
         addBird()
@@ -98,7 +106,8 @@ class GameScene: SKScene {
     func addBird(){
         bird.physicsBody = SKPhysicsBody(rectangleOf: bird.size)//物理範圍：鳥
         bird.physicsBody?.categoryBitMask = PhysicsCategory.bird
-        bird.physicsBody?.collisionBitMask = PhysicsCategory.block | PhysicsCategory.edge
+        bird.physicsBody?.contactTestBitMask = PhysicsCategory.all
+        bird.physicsBody?.collisionBitMask = PhysicsCategory.block | PhysicsCategory.edge //撞到東西時
         
         bird.physicsBody?.isDynamic = false
         
@@ -107,6 +116,7 @@ class GameScene: SKScene {
         constraintToAnchor(active: true)
         }
     
+    //設定constraintToAnchor，讓鳥最遠只能在自身大小三倍內移動
     func constraintToAnchor(active:Bool){
         if active{
             let singleRange = SKRange(lowerLimit: 0.0, upperLimit: bird.size.width*3)
