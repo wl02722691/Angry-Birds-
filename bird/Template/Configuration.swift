@@ -10,10 +10,6 @@ import Foundation
 import CoreGraphics
 
 
-
-
-
-
 struct PhysicsCategory{
     
     static let none:UInt32 = 0
