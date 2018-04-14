@@ -19,6 +19,7 @@
 		695D83F3205FC0860098F167 /* BirdTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 695D83F2205FC0860098F167 /* BirdTileSet.sks */; };
 		696CFAE8206558DA00B890E1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CFAE7206558DA00B890E1 /* Configuration.swift */; };
 		69873995206157E700497F8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69873994206157E700497F8B /* Default-568h@2x.png */; };
+		69EC75E8207E62E00043AC1C /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC75E7207E62E00043AC1C /* Block.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		696CFAE7206558DA00B890E1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		69873994206157E700497F8B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6987399C2061596F00497F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = bird/Info.plist; sourceTree = SOURCE_ROOT; };
+		69EC75E7207E62E00043AC1C /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				690F059E206186EF002E2861 /* GameCamera.swift */,
 				691C2BD42067CD9D00973F0E /* Bird.swift */,
+				69EC75E7207E62E00043AC1C /* Block.swift */,
 			);
 			path = "Custom Nodes";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				695D83E1205FBE100098F167 /* GameScene.swift in Sources */,
+				69EC75E8207E62E00043AC1C /* Block.swift in Sources */,
 				696CFAE8206558DA00B890E1 /* Configuration.swift in Sources */,
 				695D83E3205FBE100098F167 /* GameViewController.swift in Sources */,
 				690F059F206186EF002E2861 /* GameCamera.swift in Sources */,

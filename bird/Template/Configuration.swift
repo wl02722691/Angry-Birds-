@@ -9,6 +9,10 @@
 import Foundation
 import CoreGraphics
 
+struct Zposition {
+    static let background:CGFloat = 0
+    static let obstacles:CGFloat = 1
+}
 
 struct PhysicsCategory{
     

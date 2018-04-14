@@ -53,7 +53,7 @@ class GameScene: SKScene {
             roundState = .animating
             guard let view = view else{ return }
             let moveCameraBackAction = SKAction.move(to: CGPoint(x: view.bounds.size.width/2, y: view.bounds.size.height/2), duration: 2.0)
-            moveCameraBackAction.timingMode = .easeInEaseOut
+            moveCameraBackAction.timingMode = .linear
             gameCamera.run(moveCameraBackAction, completion: {
                 self.panRecognizer.isEnabled = true
                 self.addBird()
@@ -115,6 +115,22 @@ class GameScene: SKScene {
         }
         addCamera()
         
+        for child in mapNode.children{
+            if let child = child as? SKSpriteNode{
+                guard let name = child.name else {continue}
+                if !["wood","stone","glass"].contains(name) {continue}
+                //如果不包含以上的字就繼續
+                guard let type = BlockType(rawValue: name) else {continue}
+                let block = Block(type: type)
+                block.size = child.size
+                block.position = child.position
+                block.color = UIColor.brown
+                block.zPosition = Zposition.obstacles
+                block.creatPhysicsBody()
+                mapNode.addChild(block)
+                child.color = UIColor.clear
+            }
+        }
         
         let physicsRect = CGRect(x: 0, y: mapNode.tileSize.height, width: mapNode.frame.size.width, height: mapNode.frame.size.height - mapNode.tileSize.height )//讓鳥不要掉到底，而是在土的上面
         
@@ -167,6 +183,7 @@ class GameScene: SKScene {
             bird.constraints?.removeAll()
             }
         }
+    
     override func didSimulatePhysics() {
         guard let physicsBody = bird.physicsBody else{return}
         if roundState == .flying && physicsBody.isResting{
