@@ -129,7 +129,7 @@ class GameScene: SKScene {
                 block.zPosition = Zposition.obstacles
                 block.creatPhysicsBody()
                 mapNode.addChild(block)
-               child.removeFromParent()
+                child.removeFromParent()
             }
         }
         
@@ -167,9 +167,10 @@ class GameScene: SKScene {
         bird.physicsBody?.collisionBitMask = PhysicsCategory.block | PhysicsCategory.edge //撞到東西時
         
         bird.physicsBody?.isDynamic = false
-        
+        bird.aspectScale(to: mapNode.tileSize, width: false, multiplier: 1.0)
         bird.position = anchor.position
         addChild(bird)
+        
         constraintToAnchor(active: true)
         roundState = .ready
         }

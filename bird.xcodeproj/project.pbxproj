@@ -17,8 +17,8 @@
 		695D83E8205FBE100098F167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695D83E7205FBE100098F167 /* Assets.xcassets */; };
 		695D83EB205FBE100098F167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695D83E9205FBE100098F167 /* LaunchScreen.storyboard */; };
 		695D83F3205FC0860098F167 /* BirdTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 695D83F2205FC0860098F167 /* BirdTileSet.sks */; };
+		69608D902083196300C3E875 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69608D8F2083196300C3E875 /* SKNode+Extensions.swift */; };
 		696CFAE8206558DA00B890E1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CFAE7206558DA00B890E1 /* Configuration.swift */; };
-		69873995206157E700497F8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 69873994206157E700497F8B /* Default-568h@2x.png */; };
 		69EC75E8207E62E00043AC1C /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC75E7207E62E00043AC1C /* Block.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +34,8 @@
 		695D83E7205FBE100098F167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		695D83EA205FBE100098F167 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		695D83F2205FC0860098F167 /* BirdTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BirdTileSet.sks; sourceTree = "<group>"; };
+		69608D8F2083196300C3E875 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		696CFAE7206558DA00B890E1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		69873994206157E700497F8B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6987399C2061596F00497F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = bird/Info.plist; sourceTree = SOURCE_ROOT; };
 		69EC75E7207E62E00043AC1C /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +64,7 @@
 		695D83CE205FBE100098F167 = {
 			isa = PBXGroup;
 			children = (
-				69873994206157E700497F8B /* Default-568h@2x.png */,
+				69608D8E2083192D00C3E875 /* extension */,
 				695D83D9205FBE100098F167 /* bird */,
 				695D83D8205FBE100098F167 /* Products */,
 			);
@@ -89,6 +89,14 @@
 				698739912061548F00497F8B /* Template */,
 			);
 			path = bird;
+			sourceTree = "<group>";
+		};
+		69608D8E2083192D00C3E875 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				69608D8F2083196300C3E875 /* SKNode+Extensions.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		6987398F2061547D00497F8B /* UI */ = {
@@ -200,7 +208,6 @@
 				695D83DD205FBE100098F167 /* GameScene.sks in Resources */,
 				695D83E8205FBE100098F167 /* Assets.xcassets in Resources */,
 				695D83EB205FBE100098F167 /* LaunchScreen.storyboard in Resources */,
-				69873995206157E700497F8B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				695D83E1205FBE100098F167 /* GameScene.swift in Sources */,
+				69608D902083196300C3E875 /* SKNode+Extensions.swift in Sources */,
 				69EC75E8207E62E00043AC1C /* Block.swift in Sources */,
 				696CFAE8206558DA00B890E1 /* Configuration.swift in Sources */,
 				695D83E3205FBE100098F167 /* GameViewController.swift in Sources */,
