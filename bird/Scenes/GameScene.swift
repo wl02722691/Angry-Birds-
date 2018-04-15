@@ -32,6 +32,7 @@ class GameScene: SKScene {
     var roundState = RoundState.ready //開場時設定為ready
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
         setupLevel()
         setupGestureRecognizers()
         }
@@ -194,6 +195,22 @@ class GameScene: SKScene {
             }
         }
     }
+
+extension GameScene:SKPhysicsContactDelegate{
+    func didBegin(_ contact: SKPhysicsContact) {
+        let mask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        switch mask {
+        case PhysicsCategory.bird | PhysicsCategory.block: //讓bird與block能夠溝通
+            if let block = contact.bodyB.node as? Block{
+                block.impact(with: Int(contact.collisionImpulse))
+            }else if let block = contact.bodyA.node as? Block{
+                block.impact(with: Int(contact.collisionImpulse))
+            }
+        default:
+            break
+        }
+    }
+}
 
 
 extension GameScene{

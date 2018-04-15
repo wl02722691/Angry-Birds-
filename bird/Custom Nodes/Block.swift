@@ -22,7 +22,7 @@ class Block: SKSpriteNode {
         self.type = type
         switch type {
         case .wood:
-            health = 200
+            health = 140
             
         case .stone:
             health = 500
@@ -46,6 +46,16 @@ class Block: SKSpriteNode {
         physicsBody?.contactTestBitMask = PhysicsCategory.all
         physicsBody?.collisionBitMask = PhysicsCategory.all
         
+    }
+    
+    func impact(with force:Int){
+        health -= force
+        print(health)
+        if health<1{//如果生命值小於1就消失
+            removeFromParent()
+        }else if health < damageThreshold{//如果生命值小於damageThreshold就變紅
+            color = UIColor.red
+        }
     }
     
 }
