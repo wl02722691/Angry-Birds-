@@ -31,10 +31,11 @@ class Block: SKSpriteNode {
             health = 50
         }
         damageThreshold = health/2
-        super.init(texture: nil, color: UIColor.clear, size: CGSize.zero)
+        let texture = SKTexture(imageNamed: type.rawValue)
+        super.init(texture: texture, color: UIColor.clear, size: CGSize.zero)
         //這樣設定看起來很怪，但之後會在gameScene中設定完整
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -54,7 +55,8 @@ class Block: SKSpriteNode {
         if health<1{//如果生命值小於1就消失
             removeFromParent()
         }else if health < damageThreshold{//如果生命值小於damageThreshold就變紅
-            color = UIColor.red
+            let brokenTexture = SKTexture(imageNamed: type.rawValue + "Broken")
+            texture = brokenTexture
         }
     }
     
