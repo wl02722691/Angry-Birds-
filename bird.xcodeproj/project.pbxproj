@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		690F059F206186EF002E2861 /* GameCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690F059E206186EF002E2861 /* GameCamera.swift */; };
 		691C2BD52067CD9D00973F0E /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691C2BD42067CD9D00973F0E /* Bird.swift */; };
+		692DD9F120846C220022611B /* SpriteKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692DD9F020846C220022611B /* SpriteKitButton.swift */; };
 		695D83DB205FBE100098F167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D83DA205FBE100098F167 /* AppDelegate.swift */; };
 		695D83DD205FBE100098F167 /* GameScene_1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 695D83DC205FBE100098F167 /* GameScene_1.sks */; };
 		695D83E1205FBE100098F167 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D83E0205FBE100098F167 /* GameScene.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		690F059E206186EF002E2861 /* GameCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCamera.swift; sourceTree = "<group>"; };
 		691C2BD42067CD9D00973F0E /* Bird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		692DD9F020846C220022611B /* SpriteKitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitButton.swift; sourceTree = "<group>"; };
 		695D83D7205FBE100098F167 /* bird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695D83DA205FBE100098F167 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		695D83DC205FBE100098F167 /* GameScene_1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_1.sks; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		690F059D206186B6002E2861 /* Custom Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				692DD9F020846C220022611B /* SpriteKitButton.swift */,
 				690F059E206186EF002E2861 /* GameCamera.swift */,
 				691C2BD42067CD9D00973F0E /* Bird.swift */,
 				69EC75E7207E62E00043AC1C /* Block.swift */,
@@ -228,6 +231,7 @@
 				69608D902083196300C3E875 /* SKNode+Extensions.swift in Sources */,
 				69EC75E8207E62E00043AC1C /* Block.swift in Sources */,
 				69608D922084216A00C3E875 /* MenuScene.swift in Sources */,
+				692DD9F120846C220022611B /* SpriteKitButton.swift in Sources */,
 				696CFAE8206558DA00B890E1 /* Configuration.swift in Sources */,
 				695D83E3205FBE100098F167 /* GameViewController.swift in Sources */,
 				690F059F206186EF002E2861 /* GameCamera.swift in Sources */,

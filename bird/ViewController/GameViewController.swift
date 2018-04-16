@@ -29,7 +29,6 @@ class GameViewController: UIViewController {
     
 }
 
-
 extension GameViewController:SceneManagerDelegate{
     func presentMenuScene(){
         let menuScene = MenuScene()
