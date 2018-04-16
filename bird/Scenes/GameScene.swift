@@ -14,6 +14,7 @@ enum RoundState{
 }
 
 class GameScene: SKScene {
+    var SceneManagerDelegate:SceneManagerDelegate?
     
     var mapNode = SKTileMapNode()
     

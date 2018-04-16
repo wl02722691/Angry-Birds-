@@ -29,7 +29,6 @@ class Bird: SKSpriteNode {
         birdType = type
     
         let texture = SKTexture(imageNamed: type.rawValue + "1")
-        
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
     }
     required init?(coder aDecoder: NSCoder) {
