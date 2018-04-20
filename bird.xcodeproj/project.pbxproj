@@ -23,6 +23,7 @@
 		69608D942084219C00C3E875 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69608D932084219C00C3E875 /* LevelScene.swift */; };
 		696CFAE8206558DA00B890E1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696CFAE7206558DA00B890E1 /* Configuration.swift */; };
 		69E234B9208977CE003FFAA9 /* GameScene_2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 69E234B8208977CE003FFAA9 /* GameScene_2.sks */; };
+		69E234BC2089832C003FFAA9 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E234BB2089832C003FFAA9 /* AnimationHelper.swift */; };
 		69EC75E8207E62E00043AC1C /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC75E7207E62E00043AC1C /* Block.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		696CFAE7206558DA00B890E1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		6987399C2061596F00497F8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = bird/Info.plist; sourceTree = SOURCE_ROOT; };
 		69E234B8208977CE003FFAA9 /* GameScene_2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene_2.sks; sourceTree = "<group>"; };
+		69E234BB2089832C003FFAA9 /* AnimationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		69EC75E7207E62E00043AC1C /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 		695D83CE205FBE100098F167 = {
 			isa = PBXGroup;
 			children = (
+				69E234BA2089830F003FFAA9 /* Helper Files */,
 				69E234B720897725003FFAA9 /* level */,
 				69608D8E2083192D00C3E875 /* extension */,
 				695D83D9205FBE100098F167 /* bird */,
@@ -164,6 +167,14 @@
 			path = level;
 			sourceTree = "<group>";
 		};
+		69E234BA2089830F003FFAA9 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				69E234BB2089832C003FFAA9 /* AnimationHelper.swift */,
+			);
+			path = "Helper Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +258,7 @@
 				696CFAE8206558DA00B890E1 /* Configuration.swift in Sources */,
 				695D83E3205FBE100098F167 /* GameViewController.swift in Sources */,
 				690F059F206186EF002E2861 /* GameCamera.swift in Sources */,
+				69E234BC2089832C003FFAA9 /* AnimationHelper.swift in Sources */,
 				691C2BD52067CD9D00973F0E /* Bird.swift in Sources */,
 				695D83DB205FBE100098F167 /* AppDelegate.swift in Sources */,
 				69608D942084219C00C3E875 /* LevelScene.swift in Sources */,
