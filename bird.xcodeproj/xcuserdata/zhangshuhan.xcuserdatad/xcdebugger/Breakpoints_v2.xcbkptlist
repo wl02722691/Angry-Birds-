@@ -2,4 +2,69 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "bird/Custom Nodes/Bird.swift"
+            timestampString = "545550463.037676"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "Bird"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "bird.Bird.__deallocating_deinit"
+                  moduleName = "bird"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangshuhan/Desktop/game/Angry-Birds-/bird/Custom%20Nodes/Bird.swift"
+                  timestampString = "545877020.4168479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "bird.Bird.__allocating_init(texture: Swift.Optional&lt;__ObjC.SKTexture&gt;, color: __ObjC.UIColor, size: __C.CGSize) -&gt; bird.Bird"
+                  moduleName = "bird"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangshuhan/Desktop/game/Angry-Birds-/bird/Custom%20Nodes/Bird.swift"
+                  timestampString = "545877020.420451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "bird.Bird.init(texture: Swift.Optional&lt;__ObjC.SKTexture&gt;, color: __ObjC.UIColor, size: __C.CGSize) -&gt; bird.Bird"
+                  moduleName = "bird"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangshuhan/Desktop/game/Angry-Birds-/bird/Custom%20Nodes/Bird.swift"
+                  timestampString = "545877020.4243391"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

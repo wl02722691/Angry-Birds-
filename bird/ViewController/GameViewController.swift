@@ -17,7 +17,6 @@ protocol SceneManagerDelegate {
 }
 
 
-
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -51,7 +50,6 @@ extension GameViewController:SceneManagerDelegate{
             
             present(scene: gameScene)
         }
-        
     }
     
     func present(scene:SKScene){

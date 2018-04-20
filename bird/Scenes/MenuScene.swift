@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-
 class MenuScene: SKScene {
 
     var SceneManagerDelegate:SceneManagerDelegate?
@@ -17,6 +16,7 @@ class MenuScene: SKScene {
     
     func setupMenu(){
         let button = SpriteKitButton(defaultButtonImage: "playButton", action: goToLevelScene, index: 0)
+        //按下按鈕就會執行goToLevelScene到LevelScene
         button.position = CGPoint(x: frame.midX, y: frame.midY)
         button.aspectScale(to: frame.size, width: false, multiplier: 0.2)
         addChild(button)
